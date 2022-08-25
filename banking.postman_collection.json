@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "8c71fa66-6e05-4544-ad6c-ba1b69b2a96b",
+		"name": "banking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create customer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|jsLphp3HrpbrCZiZWi8FwnZQViJTxguBZSPLWzlh",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"name\":\"customer1\",\r\n    \"email\":\"customer1@gmail.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/banking/api/admin/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"banking",
+						"api",
+						"admin",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"admin@admin.com\",\r\n    \"password\":\"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/banking/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"banking",
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Apply Loan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|rEIlh6RyvG4kTlIMAPehLnmPpsiKjMdciEoaGNqK",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|KBocVvcy3CIoUnXZinqOKpzwh6WREqnIc3n7G01J",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"amount\":9,\r\n    \"term_nos\":5\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/banking/api/apply",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"banking",
+						"api",
+						"apply"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Approve Loan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|jsLphp3HrpbrCZiZWi8FwnZQViJTxguBZSPLWzlh",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":1026}"
+				},
+				"url": {
+					"raw": "http://localhost/banking/api/admin/approve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"banking",
+						"api",
+						"admin",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Loan requests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 1|jsLphp3HrpbrCZiZWi8FwnZQViJTxguBZSPLWzlh",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/banking/api/admin/list_requests",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"banking",
+						"api",
+						"admin",
+						"list_requests"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pay",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|rEIlh6RyvG4kTlIMAPehLnmPpsiKjMdciEoaGNqK",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|KBocVvcy3CIoUnXZinqOKpzwh6WREqnIc3n7G01J",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1028,\r\n    \"amount\":5000\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost/banking/api/pay",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"banking",
+						"api",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View user submitted applications",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer 2|KBocVvcy3CIoUnXZinqOKpzwh6WREqnIc3n7G01J",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost/banking/api/view_applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"banking",
+						"api",
+						"view_applications"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
